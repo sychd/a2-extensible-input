@@ -4,10 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import {UiExtensibleInputComponent} from './ui-extensible-input/UiExtensibleInputComponent';
+import { UiExtensibleInputModalComponent } from './ui-extensible-input/ui-extensible-input-modal/UiExtensibleInputModalComponent';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UiExtensibleInputComponent,
+    UiExtensibleInputModalComponent
   ],
   imports: [
     BrowserModule,
