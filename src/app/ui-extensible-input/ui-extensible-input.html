@@ -1,7 +1,15 @@
-<div class="form-line">
-    <div class="rel no-pad">
-        <input type="text"/>
-        <button (click)="createExtensibleInputModalComponent()">SMASH ME</button>
+<div class="extensible-input">
+  <div>
+    <div>
+      <input type="text"
+             [value]="value"
+             [name]="name"
+             [disabled]="disabled"
+             [placeholder]="placeholder"
+             [tabindex]="tabindex"
+             (input)="onChange($event.target.value)"
+             (blur)="onChange($event.target.value)"/>
+      <span (click)="showExtensible()"></span>
     </div>
-    <div #extensibleModalContainer></div>
+  </div>
 </div>

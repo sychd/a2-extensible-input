@@ -1,9 +1,20 @@
-import {Component, Input, OnChanges, SimpleChanges, SimpleChange} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
+
 @Component({
-  selector: 'vmr-ui-extensible-input-modal', // tslint:disable-line
-  templateUrl: './ui-extensible-input-modal.html', // templateUrl: require('./ui-extensible-input.html'),
-  styles: ['div { border: 1px solid #000 }']
+  selector: 'ui-extensible-input-modal',
+  templateUrl: require('./ui-extensible-input-modal.html')
 })
 export class UiExtensibleInputModalComponent {
-  @Input() test: any;
+  @Output()
+  public onSave: EventEmitter<string> = new EventEmitter<string>();
+  @Output()
+  public onClose: EventEmitter<void> = new EventEmitter<void>();
+
+  public save(value: string) {
+    this.onSave.emit(value);
+  }
+
+  public close() {
+    this.onClose.emit();
+  }
 }

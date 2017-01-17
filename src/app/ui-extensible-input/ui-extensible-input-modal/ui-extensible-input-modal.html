@@ -1,3 +1,17 @@
 <div>
-  some modal content. Test: {{test}}.
+  <div>
+    <header></header>
+    <section>
+            <textarea #input type="text"
+                      [value]="value"
+                      [placeholder]="placeholder"
+            ></textarea>
+    </section>
+    <footer>
+      <div>
+        <a (click)="save(input.value)">Save</a>
+        <a (click)="close()">Cancel</a>
+      </div>
+    </footer>
+  </div>
 </div>
